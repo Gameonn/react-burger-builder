@@ -1,10 +1,12 @@
 import React from 'react';
-import Toolbar from './NavigationItem/NavigationItem';
+import NavigationItem from './NavigationItem/NavigationItem';
+import './NavigationItems.css';
 
 const navigationItems = (props) => {
     return (
-        <ul>
-            <li></li>
+        <ul className="NavigationItem">
+            <NavigationItem link='/' active>Burger Builder</NavigationItem>
+            <NavigationItem link='/'>Checkout</NavigationItem>
         </ul>
     );
 }

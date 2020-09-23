@@ -9,20 +9,20 @@
     font-weight: bold;
     display: inline-block;
 }
-ul {
+.OrderSummary ul {
     list-style: none;
     font-size: 14px;
     font-variant-caps: petite-caps;
 }
-ul li::before {
+.OrderSummary ul li::before {
     content: "✅";
     display: inline-block;
     margin-right: 0.2rem;
 }
 
-ul ul li::before {
+.OrderSummary ul ul li::before {
     content: "📌";
 }
-ul ul ul li::before {
+.OrderSummary ul ul ul li::before {
     content: "🤷‍♀️";
 }
