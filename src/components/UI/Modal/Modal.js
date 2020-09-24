@@ -3,25 +3,30 @@ import './Modal.css';
 import Aux from '../../../hoc/Auxiliary/Auxiliary';
 import Backdrop from "../Backdrop/Backdrop";
 
-const modal = (props) => {
+class Modal extends React.Component {
 
-    console.log('[Modal.js] React memo');
-    return (
-        <Aux>
-            <Backdrop show={props.show} clicked={props.modalClosed} />
-            <div className="Modal" style={{
-                        transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
-                        opacity: props.show ? '1' : '0'
-                        }}>
-                {props.children}
-            </div>
-        </Aux>
+    shouldComponentUpdate ( nextProps, nextState ) {
+        return nextProps.show !== this.props.show || nextProps.children !== this.props.children;
+    }
 
-    );
+    componentDidUpdate () {
+        console.log('[Modal] DidUpdate');
+    }
+
+    render () {
+        return (
+            <Aux>
+                <Backdrop show={this.props.show} clicked={this.props.modalClosed} />
+                <div className="Modal"
+                    style={{
+                        transform: this.props.show ? 'translateY(0)' : 'translateY(-100vh)',
+                        opacity: this.props.show ? '1' : '0'
+                    }}>
+                    {this.props.children}
+                </div>
+            </Aux>
+        )
+    }
 }
 
-const areEqual = (prevProps, nextProps) => {
-    return (prevProps.show === nextProps.show)
-};
-
-export default React.memo(modal, areEqual);
+export default Modal;
