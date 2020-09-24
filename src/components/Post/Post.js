@@ -3,11 +3,12 @@ import React from 'react';
 import './Post.css';
 
 const post = (props) => (
-    <article className="Post">
-        <h1>Title</h1>
+    <article className="Post" onClick={props.clicked}>
+        <h1 style={{textTransform: 'capitalize'}}>{props.title}</h1>
         <div className="Info">
-            <div className="Author">Author</div>
+            <div className="Author">{props.author}</div>
         </div>
+        <p>{props.body}</p>
     </article>
 );
 
