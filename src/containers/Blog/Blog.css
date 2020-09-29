@@ -29,6 +29,13 @@
 }
 
 .Blog a:hover,
-.Blog a:active {
+.Blog a:active,
+.Blog a.active {
     color: #fa923f;
+}
+
+.my-active{
+    color: #f8d7da;
+    text-decoration: underline;
+    text-shadow: 1em #fa923f;
 }
