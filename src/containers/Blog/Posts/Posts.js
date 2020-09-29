@@ -8,12 +8,11 @@ class Posts extends Component {
 
     state = {
         posts: [],
-        selectedPostId: null,
         error: false
     }
 
     componentDidMount() {
-        console.log(this.props);
+        // console.log(this.props);
 
         axios.get('/posts')
                 .then(response => {
@@ -30,15 +29,14 @@ class Posts extends Component {
                 })
                 .catch((error) => {
                     this.setState({error: true});
-                    console.log(error);
+                    // console.log(error);
                 });
     }
 
     postSelectedHandler = (id) => {
         console.log(this.props, 'Posts');
-        // this.props.history.push({pathname: '/'+id});
+        // this.props.history.push({pathname: '/posts/'+id});
         this.props.history.push('/posts/' + id);
-        // this.setState({selectedPostId: id});
     }
 
     render() {
@@ -48,7 +46,7 @@ class Posts extends Component {
         if(!this.state.error) {
             posts = this.state.posts.map((post,index) => {
                 return (
-                    // <Link to={'/'+ post.id} key={index}>
+                    // <Link to={'/posts/'+ post.id} key={index}>
                         <Post key={index} title={post.title} body={post.body} author={post.author}
                                 clicked={() => this.postSelectedHandler(post.id)}/>
                     // </Link>
@@ -61,7 +59,7 @@ class Posts extends Component {
                 <section className="Posts">
                     {posts}
                 </section>
-                <Route path="/:id" component={FullPost} exact/>
+                <Route path={this.props.match.url + "/:id"} component={FullPost} exact/>
             </div>
         );
     }
