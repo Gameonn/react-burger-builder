@@ -39,6 +39,7 @@ class Posts extends Component {
         this.props.history.push('/posts/' + id);
     }
 
+
     render() {
 
         let posts = <div className="Error"> Something went wrong!!</div>;

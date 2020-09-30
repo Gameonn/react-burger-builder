@@ -1,0 +1,41 @@
+.Error {
+    text-align: center;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: .75rem 1.25rem;
+    margin: 1rem 0;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+.Home ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    background: #B0BEC5;
+}
+
+.Home li {
+    display: inline-block;
+    margin: 20px;
+}
+
+.Home a {
+    text-decoration: none;
+    color: black;
+}
+
+.Home a:hover,
+.Home a:active,
+.Home a.active {
+    color: #fa923f;
+}
+
+.my-active{
+    color: #f8d7da;
+    text-decoration: underline;
+    text-shadow: 1em #fa923f;
+}

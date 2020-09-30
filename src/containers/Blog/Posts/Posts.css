@@ -5,3 +5,11 @@
     width: 80%;
     margin: auto;
 }
+
+.Complete {
+    background: greenyellow;
+}
+
+.Incomplete {
+    background: red;
+}
