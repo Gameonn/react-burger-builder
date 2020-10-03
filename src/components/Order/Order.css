@@ -1,0 +1,20 @@
+.Order {
+    width: 80%;
+    text-align: left;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+    padding: 10px;
+    margin: 10px auto;
+    box-sizing: border-box;
+}
+
+.Order span {
+    text-transform: capitalize;
+    display: inline-block;
+    border: 1px solid #eee;
+    padding: 5px;
+    margin: 0 8px;
+    box-shadow: 3px 3px 3px 4px #ddd;
+    font-size: 14px;
+    font-style: italic;
+}
