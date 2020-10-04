@@ -5,7 +5,7 @@ const button = (props) => {
     const assignedClasses = ['Button'];
     assignedClasses.push(props.btnType);
 
-    return (<button className={assignedClasses.join(' ')} onClick={props.clicked}>{props.children}</button>);
+    return (<button className={assignedClasses.join(' ')} disabled={props.disabled} onClick={props.clicked}>{props.children}</button>);
 };
 
 export default button
