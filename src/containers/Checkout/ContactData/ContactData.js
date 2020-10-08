@@ -4,6 +4,8 @@ import Button from '../../../components/UI/Button/Button';
 import Spinner from '../../../components/UI/Spinner/Spinner';
 import axios from '../../../axios-orders';
 import Input from '../../../components/UI/Input/Input';
+import { connect } from 'react-redux';
+import * as actionTypes from '../../../store/actions';
 
 class ContactData extends Component {
     state = {
@@ -102,12 +104,13 @@ class ContactData extends Component {
             formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value;
         }
         const order = {
-            ingredients: this.props.ingredients,
+            ingredients: this.props.ings,
             price: this.props.price,
             orderData: formData
         }
         axios.post( '/orders.json', order )
             .then( response => {
+                this.props.clearCart();
                 this.setState( { loading: false } );
                 this.props.history.push( '/' );
             } )
@@ -202,4 +205,17 @@ class ContactData extends Component {
     }
 }
 
-export default ContactData;
+const mapStateToProps = state => {
+    return {
+        ings: state.ingredients,
+        price: state.totalPrice
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        clearCart: () => dispatch({type: actionTypes.RESET_CART})
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContactData);
