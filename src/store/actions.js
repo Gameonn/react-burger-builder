@@ -1,3 +1,0 @@
-export const ADD_INGREDIANT = 'ADD_INGREDIENT';
-export const REMOVE_INGREDIANT = 'REMOVE_INGREDIENT';
-export const RESET_CART = 'RESET_CART';
